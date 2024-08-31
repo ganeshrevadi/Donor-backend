@@ -47,6 +47,18 @@ app.get("/bulk", async (req, res) => {
   });
 });
 
+app.delete("/delete/:id", async (req, res) => {
+  try {
+    const del = await Form.findByIdAndDelete(req.params.id);
+    if (!del) {
+      return res.status(404).json({ message: "ID not found" });
+    }
+    res.json({ message: "Deleted" });
+  } catch (error) {
+    res.status(500).json({ message: "Server error" });
+  }
+});
+
 app.listen(3000, () => {
   console.log("Server is running on port 3000");
 });
