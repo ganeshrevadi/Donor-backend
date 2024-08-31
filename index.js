@@ -49,7 +49,7 @@ app.get("/bulk", async (req, res) => {
 
 app.delete("/delete/:id", async (req, res) => {
   try {
-    const del = await Form.findByIdAndDelete(req.params.id);
+    const del = await Form.deleteOne({ number: req.params.id });
     if (!del) {
       return res.status(404).json({ message: "ID not found" });
     }
