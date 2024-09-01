@@ -19,6 +19,14 @@ const formSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
+  food: {
+    type: String,
+    required: true,
+  },
+  location: {
+    type: String,
+    required: true,
+  },
   quantity: {
     type: Number,
     required: true,

@@ -24,6 +24,8 @@ app.post("/form", async (req, res) => {
     name: req.body.name,
     email: req.body.email,
     number: req.body.number,
+    food: req.body.food,
+    location: req.body.location,
     quantity: req.body.quantity,
   });
   const userId = form._id;
@@ -41,6 +43,8 @@ app.get("/bulk", async (req, res) => {
         name: form.name,
         email: form.email,
         number: form.number,
+        food: form.food,
+        location: form.location,
         quantity: form.quantity,
       };
     }),
