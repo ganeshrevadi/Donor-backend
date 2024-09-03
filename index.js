@@ -20,7 +20,7 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-app.get("/getuser/:id", async (req, res) => {
+app.post("/getuser/:id", async (req, res) => {
   const number = req.params.id;
   try {
     const user = await Form.findOne({ number: number });
