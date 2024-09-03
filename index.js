@@ -92,7 +92,7 @@ app.delete("/delete/:id", async (req, res) => {
   try {
     const del = await Form.deleteOne({ number: req.params.id });
     if (!del) {
-      return res.status(404).json({ message: "ID not found" });
+      return res.status(403).json({ message: "ID not found" });
     }
     res.json({ message: "Deleted" });
   } catch (error) {
